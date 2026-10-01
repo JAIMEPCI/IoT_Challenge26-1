@@ -1,6 +1,5 @@
 # IoT_Challenge26-1
-/*
-  ============================================================
+
   SISTEMA IoT DE MONITOREO HÍDRICO - SABANA CENTRO
   Internet de las Cosas - Universidad de La Sabana - 2026-2
   Challenge #1 - VERSIÓN FINAL PARA HARDWARE FÍSICO
@@ -15,8 +14,7 @@
   - LEDs rojo, amarillo, verde (alarma visual)
 
   Autores: Jaime y Andrés Daza
-  ============================================================
-*/
+
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
