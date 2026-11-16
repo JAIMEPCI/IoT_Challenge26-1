@@ -1,0 +1,13 @@
+# /etc/mosquitto/acl - cada cliente solo toca sus tópicos
+
+# Nodo ESP32: publica sus datos y escucha comandos y la recomendación de IA
+user nodo01
+topic write sabana/nodo01/telemetria
+topic write sabana/nodo01/alerta
+topic write sabana/nodo01/estado
+topic read sabana/nodo01/cmd
+topic read sabana/nodo01/ia
+
+# Gateway: lee y escribe todo el árbol del sistema
+user gateway
+topic readwrite sabana/#

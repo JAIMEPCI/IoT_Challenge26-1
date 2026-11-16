@@ -1,0 +1,15 @@
+# /etc/systemd/system/agua-gateway.service
+[Unit]
+Description=Gateway IoT monitoreo hidrico Sabana Centro
+After=network-online.target mosquitto.service
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/agua/gateway
+ExecStart=/home/pi/agua/venv/bin/python /home/pi/agua/gateway/gateway.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

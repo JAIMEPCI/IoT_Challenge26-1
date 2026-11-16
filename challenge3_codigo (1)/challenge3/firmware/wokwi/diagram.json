@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "author": "Equipo Challenge 3 IoT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra",
+      "top": -160,
+      "left": -180,
+      "attrs": {
+        "distance": "20"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -150,
+      "left": 200,
+      "attrs": {
+        "temperature": "24",
+        "humidity": "35"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 220,
+      "left": 220,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potq",
+      "top": 220,
+      "left": -200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz",
+      "top": 60,
+      "left": 360,
+      "attrs": {
+        "volume": "0.1"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledv",
+      "top": 40,
+      "left": -260,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "leda",
+      "top": 40,
+      "left": -220,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledr",
+      "top": 40,
+      "left": -180,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 130,
+      "left": -270,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 130,
+      "left": -230,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 130,
+      "left": -190,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn",
+      "top": 320,
+      "left": 40,
+      "attrs": {
+        "color": "red",
+        "label": "Silenciar"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -160,
+      "left": 340,
+      "attrs": {
+        "pins": "i2c"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "ultra:VCC",
+      "esp:VIN",
+      "red",
+      []
+    ],
+    [
+      "ultra:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "ultra:TRIG",
+      "esp:D5",
+      "green",
+      []
+    ],
+    [
+      "ultra:ECHO",
+      "esp:D18",
+      "blue",
+      []
+    ],
+    [
+      "dht:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "dht:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "dht:SDA",
+      "esp:D15",
+      "yellow",
+      []
+    ],
+    [
+      "ldr:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "ldr:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "ldr:AO",
+      "esp:D35",
+      "orange",
+      []
+    ],
+    [
+      "potq:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "potq:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "potq:SIG",
+      "esp:D34",
+      "purple",
+      []
+    ],
+    [
+      "esp:D2",
+      "esp:D32",
+      "orange",
+      []
+    ],
+    [
+      "bz:2",
+      "esp:D23",
+      "red",
+      []
+    ],
+    [
+      "bz:1",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "ledv:A",
+      "esp:D25",
+      "green",
+      []
+    ],
+    [
+      "leda:A",
+      "esp:D26",
+      "yellow",
+      []
+    ],
+    [
+      "ledr:A",
+      "esp:D27",
+      "red",
+      []
+    ],
+    [
+      "ledv:C",
+      "r1:1",
+      "black",
+      []
+    ],
+    [
+      "leda:C",
+      "r2:1",
+      "black",
+      []
+    ],
+    [
+      "ledr:C",
+      "r3:1",
+      "black",
+      []
+    ],
+    [
+      "r1:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "r2:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "r3:2",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "btn:1.l",
+      "esp:D14",
+      "white",
+      []
+    ],
+    [
+      "btn:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "lcd:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "lcd:VCC",
+      "esp:VIN",
+      "red",
+      []
+    ],
+    [
+      "lcd:SDA",
+      "esp:D21",
+      "blue",
+      []
+    ],
+    [
+      "lcd:SCL",
+      "esp:D22",
+      "green",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
