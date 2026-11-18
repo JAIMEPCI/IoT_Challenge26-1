@@ -63,14 +63,14 @@
 #else
   // Usa el hotspot de tu celular en 2,4 GHz (el ESP32 no ve redes de 5 GHz
   // ni redes universitarias con usuario y contraseña tipo WPA2-Enterprise)
-  #define WIFI_SSID  "HOTSPOT_ANDRES"       // <-- cambiar
-  #define WIFI_PASS  "clave_hotspot"        // <-- cambiar
+  #define WIFI_SSID  "Adaza n"       // <-- cambiar
+  #define WIFI_PASS  "andresdaza"        // <-- cambiar
   // Nombre de la Raspberry (se pone en Raspberry Pi Imager). Si no lo
   // encuentra, escribe aquí su IP: la ves con  hostname -I
-  #define MQTT_HOST  "agua-gw.local"
+  #define MQTT_HOST  "172.20.10.11"
   #define MQTT_PORT  1883
   #define MQTT_USER  "nodo01"               // usuario creado con mosquitto_passwd
-  #define MQTT_PASS  "clave_nodo01"         // <-- cambiar
+  #define MQTT_PASS  "nodo2026"
 #endif
 
 // Usuario del tablero web local (autenticación HTTP Digest)
